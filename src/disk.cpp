@@ -7,7 +7,7 @@ void save() {
     if (out.is_open())
     {
         for (int i = 0; i < 8; i++) {
-            out << *read() + i << " ";
+            out << *(read() + i) << " ";
         }
     }
     out.close();
