@@ -10,31 +10,29 @@ if (POLICY CMP0141)
 endif()
 
 project ("CMakeModul25")
-
+set(MY_INCLUDE ${CMAKE_SOURCE_DIR}/include)
 # Добавьте источник в исполняемый файл этого проекта.
-# add_executable (CMakeModul25 src/CMakeModul25.cpp
-#	include/main_header.h
-#	include/header_cpu.h
-#	include/header_disk.h
-#	include/header_gpu.h
-#	include/header_kbd.h
-#	include/header_modul25.h
-#	include/header_ram.h
-#	src/cpu.cpp
-#	src/disk.cpp
-#	src/gpu.cpp
-#	src/kbd.cpp
-#	src/mod25ex1.cpp
-#	src/mod25ex2.cpp
-#	src/ram.cpp
-#	src/structPoint.cpp
-#	src/split.cpp)
-add_subdirectory(src)
-
+add_executable (CMakeModul25 CMakeModul25.cpp 
+	${MY_INCLUDE}/main_header.h  
+	${MY_INCLUDE}/header_cpu.h 
+	${MY_INCLUDE}/header_disk.h 
+	${MY_INCLUDE}/header_gpu.h 
+	${MY_INCLUDE}/header_kbd.h 
+	${MY_INCLUDE}/header_modul25.h 
+	${MY_INCLUDE}/header_ram.h 
+	cpu.cpp 
+	disk.cpp 
+	gpu.cpp 
+	kbd.cpp 
+	mod25ex1.cpp 
+	mod25ex2.cpp 
+	ram.cpp 
+	structPoint.cpp 
+	split.cpp)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeModul25 PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
-# target_include_directories(CMakeModul25 PUBLIC include)
+target_include_directories(CMakeModul25 PUBLIC ${MY_INCLUDE})
