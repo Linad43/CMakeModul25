@@ -1,4 +1,4 @@
-﻿#include "main_header.h"
+﻿#include "header_ex2.h"
 
 std::vector <std::string> splitString(const std::string& str, const std::string& del) {
 	std::string str_in = str;

@@ -1,4 +1,4 @@
-﻿#include "header_modul25.h"
+﻿#include "header_ex2.h"
 
 void mod25ex2() {
 	std::cout << "2. Create a modular computer simulator project.\n";

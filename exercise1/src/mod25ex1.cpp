@@ -1,4 +1,4 @@
-﻿#include "header_modul25.h"
+﻿#include "header_ex1.h"
 
 std::vector <point> twoPoint() {
 	std::vector <point> points;

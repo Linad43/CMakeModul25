@@ -7,9 +7,12 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include "header_ex1.h"
+#include "header_ex2.h"
 
 void mod25ex1();
 void mod25ex2();
+
 std::vector <std::string> splitString(const std::string& str, const std::string& del);
 
 struct point {
@@ -28,5 +31,3 @@ struct point {
 		return false;
 	}
 };
-
-// TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.

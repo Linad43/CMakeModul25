@@ -9,8 +9,8 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("CMakeModul25")
-
+set(PROJECT_NAME "CMakeModul25")
+project (${PROJECT_NAME})
 # Добавьте источник в исполняемый файл этого проекта.
 # add_executable (CMakeModul25 src/CMakeModul25.cpp
 #	include/main_header.h
@@ -29,7 +29,14 @@ project ("CMakeModul25")
 #	src/ram.cpp
 #	src/structPoint.cpp
 #	src/split.cpp)
-add_subdirectory(src)
+
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/main/src)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/exercise1/src)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/exercise2/src)
+
+add_subdirectory(main/src)
+add_subdirectory(exercise1/src)
+add_subdirectory(exercise2/src)
 
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
@@ -37,4 +44,6 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
-# target_include_directories(CMakeModul25 PUBLIC include)
+target_include_directories(CMakeModul25 PUBLIC ${CMAKE_BINARY_DIR}/main/include)
+target_include_directories(CMakeModul25 PUBLIC ${CMAKE_BINARY_DIR}/exercise1/include)
+target_include_directories(CMakeModul25 PUBLIC ${CMAKE_BINARY_DIR}/exercise2/include)

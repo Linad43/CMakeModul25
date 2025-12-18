@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "main_header.h"
+#include "header_ex2.h"
 
 void save();
 void load();

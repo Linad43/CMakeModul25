@@ -6,7 +6,6 @@
 #include "header_kbd.h"
 #include "header_ram.h"
 
-void mod25ex1();
 void mod25ex2();
 std::vector <std::string> splitString(const std::string& str, const std::string& del);
 //struct point;
