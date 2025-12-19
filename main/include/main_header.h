@@ -10,8 +10,8 @@
 #include "header_ex1.h"
 #include "header_ex2.h"
 
-void mod25ex1();
-void mod25ex2();
+//void mod25ex1();
+//void mod25ex2();
 
 std::vector <std::string> splitString(const std::string& str, const std::string& del);
 
